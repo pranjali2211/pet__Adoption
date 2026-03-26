@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+function handleFerretSelection() {
+    const ferretSelect = document.getElementById("rabbit");
+    const selectedValue = ferretSelect.value;
+
+    if (selectedValue === "ferret") {
+        window.location.href = "ferret.html";
+    }
+}
+</script>  
+<style>
+        form {
+            border: 3px solid black;
+            width:500px;
+            height:200px;
+            margin-top:200px;
+            margin-left:500px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color:rgb(238, 239, 241);
+            box-shadow:15px 15px 10px 10px grey;
+         }
+
+        h2 {
+            text-align: center;
+        
+        }
+
+        label, select {
+            display: block;
+            margin: 15px 0;
+            font-size: larger;
+        }
+
+        select {
+            width:100%;
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+      <form>
+<fieldset>
+ <h2><i>🐾Select Your New Friend🐾</i></h2>
+
+ <label for="rabbits"><b>Ferret</b></label>
+<select id="rabbit" name="rabbit" onchange="handleFerretSelection()">
+<option value="ferret">Ferret</option>
+<option value="ferret">Ferret</option>
+ </select>
+ </fieldset>
+    </form>   
+</body>
+</html>

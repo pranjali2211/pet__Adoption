@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function handleDogSelection() {
+            const dogSelect = document.getElementById("dog");
+            const selectedValue = dogSelect.value;
+
+            if (selectedValue === "BEAGLE") {
+                window.location.href = "beagle.html";
+            } 
+            else if (selectedValue === "BULLDOG") {
+                window.location.href = "bulldog.html";
+            }
+            else if (selectedValue === "GOLDEN RETRIEVER") {
+                window.location.href = "max.html";
+            }
+            else if (selectedValue === "LABRADOR") {
+                window.location.href = "lab.html";
+            }
+            else if (selectedValue === "POODLE") {
+                window.location.href = "poodle.html";
+            }
+        }
+    </script>
+    <style>
+        form {
+            border: 3px solid black;
+            width:500px;
+            height:200px;
+            margin-top:200px;
+            margin-left:500px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color:rgb(238, 239, 241);
+            box-shadow:15px 15px 10px 10px grey;
+         }
+
+        h2 {
+            text-align: center;
+        
+        }
+
+        label, select {
+            display: block;
+            margin: 15px 0;
+            font-size: larger;
+        }
+
+        select {
+            width:100%;
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+<fieldset>
+ <h2><i>🐾Select Your New Friend🐾</i></h2>
+
+ <label for="dog"><b>Dogs🐶</b></label>
+<select  id="dog" name="dog" onchange="handleDogSelection()">
+<option value="BEAGLE">Beagle</option>
+ <option value="BULLDOG">Bulldog</option>
+ <option value="GOLDEN RETRIEVER">Golden Retriever</option>
+ <option value="LABRADOR">Labrador</option>
+<option value="POODLE">Poodle</option>
+ </select>
+ </fieldset>
+    </form>
+</body>
+</html>

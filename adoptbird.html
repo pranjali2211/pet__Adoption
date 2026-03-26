@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <script>
+        function handleBirdSelection() {
+            const birdSelect = document.getElementById("birdSelect"); 
+            const selectedValue = birdSelect.value;
+
+            if (selectedValue === "COCKATIEL") {
+                window.location.href = "cockatiel.html";
+            } 
+            else if (selectedValue === "COCKATOO") {
+                window.location.href = "cockatoo.html";
+            } 
+            else if (selectedValue === "PARAKEET") {
+                window.location.href = "sky.html";
+            }
+        }
+    </script>
+
+    <style>
+  form {
+            border: 3px solid black;
+            width:500px;
+            height:200px;
+            margin-top:200px;
+            margin-left:500px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color:rgb(238, 239, 241);
+            box-shadow:15px 15px 10px 10px grey;
+         }
+
+        h2 {
+            text-align: center;
+        
+        }
+
+        label, select {
+            display: block;
+            margin: 15px 0;
+            font-size: larger;
+        }
+
+        select {
+            width:100%;
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+<fieldset>
+ <h2><i>🦜choose your talking partner🦜</i></h2> 
+
+ <lable for="birdSelect">BIRD'S🦜</lable>
+   
+<select id="birdSelect" onchange="handleBirdSelection()">
+<option value="COCKATIEL">COCKATIEL</option>
+<option value="COCKATOO">COCKATOO</option>
+<option value="PARAKEET">PARAKEET</option>
+</select>
+  </fieldset>
+    </form>
+ 
+</body>
+</html>

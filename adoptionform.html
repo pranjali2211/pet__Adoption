@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function handlePetSelection() {
+            const petSelect = document.getElementById("pet");
+            const selectedValue = petSelect.value;
+
+            if (selectedValue ==="DOG") {
+                window.location.href ="adoptdog.html";
+            } else if (selectedValue ==="CAT") {
+                window.location.href ="adoptcat.html";
+            } else if (selectedValue ==="BIRD") {
+                window.location.href ="adoptbird.html";
+            } else if (selectedValue ==="RABBIT") {
+                window.location.href ="adoptrabbit.html";
+            } else if (selectedValue ==="FERRET") {
+                window.location.href ="adoptferret.html";
+            }
+        }
+    </script>
+    <style>
+        body, html{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        text-align: center;
+        }
+        .form-container {
+        height: 100%;
+        display: flex;
+    }
+
+    form {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 40px;
+        border: 3px solid black;
+        border-radius: 10px;
+        color: white;
+         width: 100%;
+        max-width: 1000px;
+        box-sizing: border-box;
+        text-align: center;
+        margin-left:250px;
+        margin-top:100px;
+    }
+    form label {
+        font-size: 18px;
+    
+       }
+
+    form input {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+    }
+    #a{
+        
+    }
+    
+</style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            
+            <h3>❤️Thank you for choosing to give a loving home! Please take a few minutes to fill out this form.🐾</h3>
+    <label for="dog">Do you currently own any pets?</label><br><br>
+    <input type="checkbox">Yes<br>
+    <input type="checkbox">No<br><br>
+
+<label for="name">Full name:</label>
+<input type="text" id="name" name="name" placeholder="Enter your full name" title="only characters are allowed"  pattern="[A-Za-z]+" required><br><br>
+
+
+ <label for="add">Address:</label>
+ <textarea id="add" name="Address" placeholder="Enter your address" required></textarea><br><br>
+
+ <label for="email">Email :</label>
+ <input type="email" id="email" name="Email" placeholder="Enter your email" required><br><br>
+
+ <label for="pet"><b>Find Your Perfect Pet:</b></label>
+ <select id="pet" onchange="handlePetSelection()">
+  <option value="DOG">DOG</option>
+    <option value="CAT">CAT</option>
+    <option value="BIRD">BIRD</option>
+    <option value="RABBIT">RABBIT</option>
+     <option value="FERRET">FERRET</option>
+ </select><br><br>
+ <input id="a" type="submit" name="submit" value="submit"required>
+
+</feildset>
+</body>
+</html>

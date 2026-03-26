@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pet Payment</title>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#fbc2eb,#a6c1ee);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.payment-card{
+    background:white;
+    padding:30px;
+    width:360px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align:center;
+    color:#333;
+}
+
+.pet-info{
+    background:#f7f7f7;
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:20px;
+}
+
+.pet-info p{
+    margin:6px 0;
+}
+
+h3{
+    margin-top:10px;
+    color:#444;
+}
+
+.payment-options label{
+    display:block;
+    margin:10px 0;
+    cursor:pointer;
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#667eea;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#5563c1;
+}
+
+.success{
+    text-align:center;
+    color:green;
+    margin-top:15px;
+    display:none;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+<div class="payment-card">
+<h2>Pet Payment</h2>
+<div class="pet-info">
+<p><b>Pet Name:</b> <span id="petName"></span></p>
+<p><b>Price:</b> ₹<span id="petPrice"></span></p>
+</div>
+<h3>Select Payment Method</h3>
+<form>
+<div class="payment-options">
+  <label><input type="radio" name="pay" value="cod"> Cash on Delivery</label>
+  <label><input type="radio" name="pay" value="upi"> UPI</label>
+  <label><input type="radio" name="pay" value="credit"> Credit Card</label>
+  <label><input type="radio" name="pay" value="debit"> Debit Card</label>
+</div>
+ <div id="extraFields"></div>
+<button type="submit" class="btn btn-success">Confirm Payment</button>
+<p class="success" id="successMsg">
+Payment Successful! 🎉 Your pet adoption request is confirmed.
+</p>
+</form>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+
+  const pet = params.get("pet");
+  const price = params.get("price");
+
+  document.getElementById("petName").textContent = pet;
+  document.getElementById("petPrice").textContent = price;
+</script>
+
+<script>
+const paymentOptions = document.querySelectorAll('input[name="pay"]');
+const extraFields = document.getElementById("extraFields");
+
+paymentOptions.forEach(option => {
+  option.addEventListener("change", function() {
+
+    if (this.value === "cod") {
+      extraFields.innerHTML = `
+        <h4>Enter Delivery Details</h4>
+        <input type="text" placeholder="Full Address" required><br><br>
+        <input type="tel" placeholder="Phone Number" required>
+      `;
+    }
+
+    else if (this.value === "upi") {
+      extraFields.innerHTML = `
+        <h4>Enter UPI Details</h4>
+        <input type="text" placeholder="UPI ID (example@upi)" required>
+      `;
+    }
+
+    else if (this.value === "credit" || this.value === "debit") {
+      extraFields.innerHTML = `
+        <h4>Enter Card Details</h4>
+        <input type="text" placeholder="Card Number" required><br><br>
+        <input type="text" placeholder="Expiry Date" required><br><br>
+        <input type="text" placeholder="CVV" required>
+      `;
+    }
+
+  });
+});
+</script>
+</body>
+</html>

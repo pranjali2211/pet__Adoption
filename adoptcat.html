@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <script>
+        function handleCatSelection() {
+            const catSelect = document.getElementById("cat");
+            const selectedValue = catSelect.value;
+
+            if (selectedValue === "PERSIAN") {
+                window.location.href = "persian.html";
+            } 
+            else if (selectedValue === "TABBY") {
+                window.location.href = "tigercat.html";
+            } 
+            else if (selectedValue === "SIAMESE") {
+                window.location.href = "siamese.html";
+            }
+            else if (selectedValue === "SPHYNX") {
+                window.location.href = "sphynx.html";
+            }
+        }
+    </script>
+    <style>
+  form {
+            border: 3px solid black;
+            width:500px;
+            height:200px;
+            margin-top:200px;
+            margin-left:500px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color:rgb(238, 239, 241);
+            box-shadow:15px 15px 10px 10px grey;
+         }
+
+        h2 {
+            text-align: center;
+        
+        }
+
+        label, select {
+            display: block;
+            margin: 15px 0;
+            font-size: larger;
+        }
+
+        select {
+            width:100%;
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+  <form>
+<fieldset>
+ <h2><i>🐾Select Your New Friend🐾</i></h2> 
+
+ <label for="cat"><b>Cat's😺</b></label>
+<select  id="cat" name="cat" onchange="handleCatSelection()">
+<option value="PERSIAN">PERSIAN</option>
+<option value="TABBY">TABBY</option>
+<option value="SIAMESE">SIAMESE</option>
+<option value="SPHYNX">SPHYNX</option>
+</select>
+
+    
+</body>
+</html>

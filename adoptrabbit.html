@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+function handleRabbitSelection() {
+    const rabbitSelect = document.getElementById("rabbit");
+    const selectedValue = rabbitSelect.value;
+
+    if (selectedValue === "Mini Rex") {
+        window.location.href = "minirex.html";
+    } 
+    else if (selectedValue === "Angora Rabbit") {
+        window.location.href = "angora.html";
+    }
+}
+</script>
+    <style>
+        form {
+            border: 3px solid black;
+            width:500px;
+            height:200px;
+            margin-top:200px;
+            margin-left:500px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color:rgb(238, 239, 241);
+            box-shadow:15px 15px 10px 10px grey;
+         }
+
+        h2 {
+            text-align: center;
+        
+        }
+
+        label, select {
+            display: block;
+            margin: 15px 0;
+            font-size: larger;
+        }
+
+        select {
+            width:100%;
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+<fieldset>
+ <h2><i>🐾Select Your New Friend🐾</i></h2>
+
+ <label for="rabbits"><b>Rabbits</b></label>
+<select id="rabbit" name="rabbit" onchange="handleRabbitSelection()">
+<option value="Mini Rex">Mini Rex</option>
+ <option value="Angora Rabbit">Angora Rabbit</option>
+ </select>
+ </fieldset>
+    </form>  
+</body>
+</html>
